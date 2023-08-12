@@ -5,6 +5,7 @@ const helmet = require("helmet");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const kpiRoutes = require("./routes/kpi.js");
 
 /* CONFIGURATIONS */
 dotenv.config();
@@ -36,4 +37,8 @@ async function connectToMongoDb() {
     console.error("❌ Error connecting to MongoDB:", error);
   }
 }
+
 connectToMongoDb();
+
+/* ROUTES */
+app.use("/kpi", kpiRoutes);
