@@ -29,7 +29,6 @@ async function connectToMongoDb() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    /* SERVER */
     app.listen(PORT, () => {
       console.log(`Connected to MongoDB ✅ & listening on port ${PORT}`);
     });
